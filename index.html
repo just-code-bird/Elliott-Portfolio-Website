@@ -1,0 +1,273 @@
+<!-- INDEX: index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Elliott Reyna — Personal Website</title>
+  <meta name="description" content="Personal site for Elliott Reyna" />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#515A47;--glass:rgba(255,255,255,0.03);--radius:12px;--maxw:900px}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#515A47 1000%,var(--bg) 100%);color:#EBEBD3}
+
+    /* layout */
+    .container{max-width:var(--maxw);margin:36px auto;padding:20px;text-align:center}
+    header{margin-top:8px;margin-bottom:18px}
+    .hello{font-size:46px;font-weight:700;margin:0}
+    .name{font-size:46px;font-weight:700;margin:6px 0}
+    .typed-name{display:inline-block}
+    .caret{display:inline-block;width:10px;height:26px;background:linear-gradient(90deg,var(--accent),#515A47);margin-left:8px;border-radius:3px;vertical-align:middle;animation:blink 1s steps(2) infinite}
+    @keyframes blink{50%{opacity:0}}
+
+    /* slideshow */
+    .slideshow{margin:18px auto 30px;max-width:760px;border-radius:12px;background:var(--card);padding:12px;box-shadow:0 8px 24px rgba(250, 250, 250, 0.6)}
+    .slide-wrap{position:relative;overflow:hidden;border-radius:8px}
+    .slides{display:flex;transition:transform 300ms ease}
+    .slide{min-width:100%;height:360px;display:flex;align-items:center;justify-content:center;background:#244483;color:var(--muted);font-size:18px}
+    .slide img{width:100%;height:100%;object-fit:cover}
+
+    .controls{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+    .btn, .page-btn{cursor:pointer;padding:10px 16px;border-radius:10px;border:0}
+    .btn{background:rgba(146, 132, 132, 0.04);color:var(--muted)}
+
+    /* page buttons */
+    .pages{display:flex;gap:14px;justify-content:center;margin-top:30px}
+    .page-btn{background:linear-gradient(90deg,var(--accent),#EBEBD3);color:white;padding:12px 18px;border-radius:12px;text-decoration:none;border:none}
+
+    /* about */
+    .about{margin-top:36px}
+    .about h3{margin-bottom:10px}
+.about p {
+  margin-bottom: 1.2em;
+  line-height: 1.6;
+}
+
+    /* github preview */
+    .github-preview{margin-top:30px;max-width:760px;margin-left:auto;margin-right:auto}
+    .github-card{background:var(--card);padding:20px;border-radius:10px;min-height: 160px;}
+    .github-iframe{width:100%;height:56px;border:0;border-radius:10px}
+
+    footer{margin-top:28px;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:640px){.slide{height:220px}.name{font-size:32px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <p class="hello">Hello</p>
+      <h1 class="name"><span id="typed-name" class="typed-name" data-phrases='["I\'m Elliott","أنا إليوت","Je suis Elliott","Soy Elliott","Ich bin Elliott","Sono Elliott","Eu sou Elliott","私はエリオットです","나는 엘리엇입니다","Я — Эллиотт","Ik ben Elliott","Είμαι ο Elliott","Eu sunt Elliott","Ik ben Elliott","Yo soy Elliott"]'></span><span class="caret" aria-hidden="true"></span></h1>
+    </header>
+
+    <!-- Slideshow (centered) -->
+    <section class="slideshow" aria-label="Image slideshow">
+      <div class="slide-wrap">
+        <div id="slides" class="slides">
+          <!-- Replace src with your images -->
+          <div class="slide"><img src="love.jpg" alt="Slide 1"></div>
+          <div class="slide"><img src="Abbs.jpeg" alt="Slide 3"></div>
+          <div class="slide"><img src="PaintBall.jpeg" alt="Slide 4"></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="prev" class="btn" aria-label="Previous slide">◀</button>
+        <div id="dots" aria-hidden="true"></div>
+        <button id="next" class="btn" aria-label="Next slide">▶</button>
+      </div>
+    </section>
+
+    <!-- three centered page buttons -->
+    <nav class="pages" role="navigation" aria-label="Main pages">
+      <a class="page-btn" href="on-my-mind.html">On my mind</a>
+      <a class="page-btn" href="projects.html">Projects</a>
+      <a class="page-btn" href="contact.html">Contact</a>
+    </nav>
+
+    <!-- about section -->
+    <section class="about">
+      <h3>About me</h3>
+      <p>My name is Elliott Reyna. I’m a 22 year old emerging software developer with a growing passion for UI/UX design, artificial intelligence, and building technology that genuinely improves people’s lives. I’m currently developing my technical foundation through the Year Up United program, where I focus on application development, coding fundamentals, and industry ready communication and problem solving skills. My long term goal is to grow into the software and AI field specifically in intelligent systems, user centered design, and automated solutions.</p>
+      <p>My interest in tech goes beyond writing code. I’m energized by the creativity behind UI/UX design, the logic behind clean, intuitive user flows, and the potential of AI to make everyday tasks smarter and more efficient. I enjoy breaking down complex problems, experimenting with new tools, and transforming ideas into experiences that feel seamless and human centered.</p>
+      <p>Before stepping into development, I worked in marketing for a multinational software company, supporting regions across the Middle East and India. That role taught me how people interact with products, how design and communication shape behavior, and how strategy connects technology to real users lessons that continue to influence my approach to product development and design.</p>
+      <p>Outside of work and school, I’m grounded by the people and moments that matter most. I’m engaged to my high school sweetheart—we’ve been together for five years and she’s been a huge source of support through every step of my journey. My dog, Abby, has been right there with us too; she’s played a big role in keeping me steady, motivated, and grounded on tough days.</p>
+      <p>As I move toward my upcoming internship and into the early stages of my tech career, I’m focused on opportunities where design, AI, and human centered thinking come together. I’m excited to keep growing, keep building, and contribute to the next generation of intuitive, intelligent technology. If you’re looking for someone who learns fast, thinks creatively, and brings authenticity to their work, I’d love to connect.</p>
+      <!-- GitHub preview -->
+<!-- GitHub preview (API-driven card) -->
+<div class="github-preview">
+  <div id="gh-card" class="github-card" aria-live="polite">
+    <div class="gh-loading">Loading GitHub preview…</div>
+  </div>
+</div>
+
+<style>
+  .github-card{background:var(--card);padding:14px;border-radius:10px;display:flex;gap:12px;align-items:center;max-width:760px;margin:0 auto}
+  .gh-avatar{width:72px;height:72px;border-radius:10px;flex-shrink:0;object-fit:cover}
+  .gh-info{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  text-align:left;
+}
+  .gh-name{
+    font-weight:700;
+    margin:0 0 6px
+}
+  .gh-bio{color:var(--muted);margin:0 0 8px;font-size:14px}
+  .gh-meta{display:flex;gap:12px;color:var(--muted);font-size:13px;margin-bottom:8px}
+  .gh-btn{padding:8px 12px;
+    border-radius:10px;
+    background:linear-gradient(90deg,var(--accent),#EBEBD3);
+    color:white;text-decoration:none;
+    border:0;
+    margin-top:auto;
+}
+  .gh-loading{color:var(--muted)}
+  @media (max-width:640px){.gh-avatar{width:56px;height:56px}}
+</style>
+
+<script>
+  (function(){
+    const username = 'just-code-bird'; // ← your GitHub username (string)
+
+    const card = document.getElementById('gh-card');
+    if(!card) return;
+
+    async function render() {
+      card.innerHTML = '<div class="gh-loading">Loading GitHub preview…</div>';
+      try {
+        // use the username variable (not the identifier just-code-bird)
+        const res = await fetch('https://api.github.com/users/' + username);
+        if(!res.ok) throw new Error('GitHub user not found (status ' + res.status + ')');
+        const data = await res.json();
+        const html = `
+          <img class="gh-avatar" src="${data.avatar_url}" alt="${data.login} avatar" />
+          <div class="gh-info">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <div class="gh-name">${data.name || data.login}</div>
+                <div style="color:var(--muted);font-size:13px">${data.login}</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:13px;color:var(--muted)">Repos: <strong>${data.public_repos}</strong></div>
+                <div style="font-size:13px;color:var(--muted)">Followers: <strong>${data.followers}</strong></div>
+              </div>
+            </div>
+            <p class="gh-bio">${data.bio || ''}</p>
+            <a class="gh-btn" href="https://github.com/${username}" target="_blank" rel="noopener noreferrer">Open GitHub →</a>
+          </div>
+        `;
+        card.innerHTML = html;
+      } catch (err) {
+        card.innerHTML = '<div style="color:#ffb4b4">Could not load GitHub preview — <a href="https://github.com/' + username + '" target="_blank" rel="noopener noreferrer">open profile</a></div>';
+        console.error(err);
+      }
+    }
+
+    render();
+  })();
+</script>
+
+    <footer>
+      <div>Made with ❤️ by Elliott. • Last updated: 2025-11-24</div>
+    </footer>
+  </div>
+
+<script>
+// Typing effect (non-interactive — uses a hardcoded list of phrases)
+(function(){
+const el = document.getElementById('typed-name') || document.getElementById('typed');
+if(!el) return;
+
+const phrases = [
+"I'm Elliott.",
+"Je suis Elliott.",
+"Soy Elliott.",
+"Ich bin Elliott.",
+"私はエリオットです。",
+"나는 엘리엇입니다.",
+"मैं एलियट हूँ.",
+"أنا إليوت.",
+"Eu sou Elliott.",
+"Io sono Elliott.",
+"Я Эллиот.",
+"Ik ben Elliott.",
+"Είμαι ο Elliott.",
+"Jestem Elliott.",
+"我是埃利奥特。"
+];
+
+
+let phraseIndex = 0;
+let charIndex = 0;
+let deleting = false;
+const typeSpeed = 80;
+const deleteSpeed = 40;
+const pauseAfter = 1100;
+
+
+function tick(){
+const full = phrases[phraseIndex] || '';
+if(!deleting){
+charIndex++;
+el.textContent = full.slice(0, charIndex);
+if(charIndex >= full.length){
+deleting = true;
+setTimeout(tick, pauseAfter);
+return;
+}
+setTimeout(tick, typeSpeed);
+} else {
+charIndex--;
+el.textContent = full.slice(0, Math.max(0,charIndex));
+if(charIndex <= 0){
+deleting = false;
+phraseIndex = (phraseIndex + 1) % phrases.length;
+setTimeout(tick, 250);
+return;
+}
+setTimeout(tick, deleteSpeed);
+}
+}
+
+
+tick();
+})();
+
+    // Basic slideshow controls
+    (function(){
+      const slidesEl = document.getElementById('slides');
+      const slides = slidesEl.children;
+      const total = slides.length; let idx=0;
+      const dotsEl = document.getElementById('dots');
+
+      function renderDots(){
+        dotsEl.innerHTML='';
+        for(let i=0;i<total;i++){
+          const d=document.createElement('button'); d.className='btn'; d.setAttribute('aria-label','Go to slide '+(i+1)); d.textContent='•'; d.style.opacity = i===idx?1:0.45;
+          d.addEventListener('click',()=>{go(i)});
+          dotsEl.appendChild(d);
+        }
+      }
+      function update(){
+        slidesEl.style.transform = `translateX(${ -idx * 100 }%)`;
+        Array.from(dotsEl.children).forEach((b,i)=>b.style.opacity = i===idx?1:0.45);
+      }
+      function go(i){ idx = (i+total)%total; update(); }
+      document.getElementById('prev').addEventListener('click',()=>go(idx-1));
+      document.getElementById('next').addEventListener('click',()=>go(idx+1));
+      renderDots(); update();
+
+      // allow keyboard navigation when focused
+      document.addEventListener('keydown', (e)=>{
+        if(e.key==='ArrowLeft') go(idx-1);
+        if(e.key==='ArrowRight') go(idx+1);
+      });
+    })();
+  </script>
+</body>
+</html>
+
+
